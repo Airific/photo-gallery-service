@@ -1,13 +1,11 @@
-# Project Name
+# photo-gallery-service
 
-> Project description
+> Airbnb photo gallery service
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Airific/More-Places-To-Stay-Service
+  - https://github.com/Airific/review_service
 
 ## Table of Contents
 
