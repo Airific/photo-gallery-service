@@ -1,6 +1,6 @@
-# Project Name
+# photo-gallery-service
 
-> Project description
+> Airbnb photo gallery service
 
 ## Related Projects
 
