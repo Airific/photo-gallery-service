@@ -1,14 +1,27 @@
 {
-  "name": "",
+  "name": "photo-gallery-service",
   "version": "",
   "description": "",
-  "author": "",
+  "author": "victoria",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "enzyme": "^3.11.0",
+    "express": "^4.17.1",
+    "jest": "^26.4.2",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.2"
+  },
   "devDependencies": {
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
