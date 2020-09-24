@@ -1,12 +1,9 @@
 const express = require('express');
-const parser = require('body-parser');
 const db = require('./db.js');
 
 const port = 3001;
 
 const app = express();
-
-app.use(parser.json());
 
 app.get('/', (req, res) => {
   res.send('hello');
