@@ -1,16 +1,12 @@
 const express = require('express');
-const parser = require('body-parser');
+const path = require('path');
 const db = require('./db.js');
 
 const port = 3001;
 
 const app = express();
 
-app.use(parser.json());
-
-app.get('/', (req, res) => {
-  res.send('hello');
-});
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/listings/gallery/:id', (req, res) => {
   const { id } = req.params;
