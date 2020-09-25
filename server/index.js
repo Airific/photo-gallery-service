@@ -1,13 +1,12 @@
 const express = require('express');
+const path = require('path');
 const db = require('./db.js');
 
 const port = 3001;
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('hello');
-});
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/listings/gallery/:id', (req, res) => {
   const { id } = req.params;
