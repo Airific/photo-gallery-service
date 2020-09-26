@@ -1,11 +1,12 @@
 import React from 'react';
+import Gallery from './gallery';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoad: false,
+      isLoad: true,
     };
   }
 
@@ -13,7 +14,7 @@ class App extends React.Component {
     const { isLoad } = this.state;
     if (isLoad) {
       return (
-        <div>checker</div>
+        <Gallery />
       );
     }
     return (
