@@ -1,6 +1,7 @@
 import React from 'react';
 import Gallery from './gallery';
 import Modal from './modal';
+import Theme from './style/theme';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,10 +16,10 @@ class App extends React.Component {
     const { isLoad } = this.state;
     if (isLoad) {
       return (
-        <>
+        <Theme>
           <Gallery />
           <Modal />
-        </>
+        </Theme>
       );
     }
     return (
