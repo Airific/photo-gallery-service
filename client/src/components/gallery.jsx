@@ -5,10 +5,11 @@ import {
 
 const Gallery = (props) => (
   <>
-    <GridContainer className="saveBtn">
-      <Col size={12}>
-        <button type="button">
-          Save
+    <GridContainer>
+      <Col className="btnContainer" size={12}>
+        <button className="saveBtn" type="button">
+          <p className="save">Save</p>
+          <img className="heart" src="../img/heart.png" alt="heart" />
         </button>
       </Col>
     </GridContainer>

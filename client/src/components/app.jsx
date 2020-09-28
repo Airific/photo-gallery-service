@@ -18,7 +18,7 @@ class App extends React.Component {
       return (
         <Theme>
           <Gallery />
-          <Modal />
+          {/* <Modal /> */}
         </Theme>
       );
     }
