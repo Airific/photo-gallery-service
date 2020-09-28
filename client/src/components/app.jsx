@@ -2,6 +2,7 @@ import React from 'react';
 import Gallery from './gallery';
 import Modal from './modal';
 import Theme from './style/theme';
+import Slider from './slider';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends React.Component {
       return (
         <Theme>
           <Gallery />
+          <Slider />
           {/* <Modal /> */}
         </Theme>
       );
