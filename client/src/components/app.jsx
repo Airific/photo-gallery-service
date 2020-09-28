@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Gallery from './gallery';
 import Modal from './modal';
 import Theme from './style/theme';
@@ -9,8 +10,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isLoad: true,
+      isLoad: false,
+      imgList: [],
     };
+  }
+
+  componentDidMount() {
+    const pageId = window.location.pathname.split('/')[1];
+    axios.get(`/listings/gallery/${pageId}`)
+      .then((results) => {
+        console.log(results.data);
+        this.setState({
+          isLoad: true,
+          imgList: results.data[0].imgURLs,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {

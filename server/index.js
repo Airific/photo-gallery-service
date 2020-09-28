@@ -30,6 +30,11 @@ app.get('/listings/header/:id', (req, res) => {
   });
 });
 
+app.get('/:id', (req, res) => {
+  const { id } = req.params;
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
 app.listen(port, () => {
   console.log('connected');
 });
