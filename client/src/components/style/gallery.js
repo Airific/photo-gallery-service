@@ -31,12 +31,13 @@ export const GridContainer = styled.div`
     background-color: #fff;
     display: inline;
     float: right;
+    margin: 5px;
+    padding: 5px 6px;
   }
 
   .saveBtn:hover {
     background-color: #f2f2f2;
     border-radius: 5px;
-    padding: 5px 6px;
   }
 
   .save {

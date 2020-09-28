@@ -49,7 +49,7 @@ export const ListItem = styled.div`
 
   div {
     float: left;
-    background-color: pink;
+    background-color: lavender;
     width: auto;
     padding: 0 20px;
     p {
