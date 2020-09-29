@@ -16,6 +16,7 @@ class App extends React.Component {
       showModal: false,
       showSlider: false,
       count: 0,
+      isSaved: false,
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
@@ -96,7 +97,7 @@ class App extends React.Component {
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider, resetSlider, count,
+      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved,
     } = this.state;
 
     if (isLoad) {
@@ -104,6 +105,7 @@ class App extends React.Component {
         <Theme>
           <Gallery
             imgList={imgList}
+            isSaved={isSaved}
             handleShowAllClick={this.handleShowAllClick}
             handleSavedClick={this.handleSavedClick}
             handleImgClick={this.handleImgClick}
@@ -111,6 +113,7 @@ class App extends React.Component {
           <Slider
             showSlider={showSlider}
             imgList={imgList}
+            isSaved={isSaved}
             handleSavedClick={this.handleSavedClick}
             handleShowAllClick={this.handleShowAllClick}
             resetSlider={resetSlider}

@@ -9,7 +9,8 @@ import { Container, GridContainer, Col } from './style/slider';
 const Slider = (props) => {
   const {
     imgList,
-    handleSavedClick, showSlider, handleShowAllClick, count, decrementCount, incrementCount,
+    handleSavedClick,
+    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved,
   } = props;
   const imgLink = imgList[count].url;
   const imgDes = imgList[count].description;
@@ -21,7 +22,7 @@ const Slider = (props) => {
           <div className="header">
             <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
             <p>{`${count + 1}/${imgList.length}`}</p>
-            <img className="heart" src="../img/heart.png" alt="heart" onClick={() => { handleSavedClick(); }} />
+            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
           </div>
           <Col className="main">
             <button onClick={() => { decrementCount(); }} className="left" type="button">leftArrow</button>

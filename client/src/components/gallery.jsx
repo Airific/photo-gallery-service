@@ -8,7 +8,7 @@ import {
 
 const Gallery = (props) => {
   const {
-    handleImgClick, handleSavedClick, handleShowAllClick, imgList,
+    handleImgClick, handleSavedClick, handleShowAllClick, imgList, isSaved,
   } = props;
 
   return (
@@ -16,8 +16,8 @@ const Gallery = (props) => {
       <GridContainer>
         <Col className="btnContainer" size={12}>
           <button className="saveBtn" type="button" onClick={() => { handleSavedClick(); }}>
-            <p className="save">Save</p>
-            <img className="heart" src="../img/heart.png" alt="heart" />
+            <p className="save">{isSaved ? 'Saved' : 'Save'}</p>
+            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" />
           </button>
         </Col>
       </GridContainer>
