@@ -24,6 +24,7 @@ class App extends React.Component {
     this.incrementCount = this.incrementCount.bind(this);
     this.decrementCount = this.decrementCount.bind(this);
     this.handleImgClick = this.handleImgClick.bind(this);
+    this.handleSaveToClick = this.handleSaveToClick.bind(this);
   }
 
   componentDidMount() {
@@ -41,7 +42,21 @@ class App extends React.Component {
   }
 
   handleSavedClick() {
+    const { isSaved } = this.state;
+    if (isSaved) {
+      this.setState((state) => ({
+        isSaved: !state.isSaved,
+      }));
+    } else {
+      this.setState((state) => ({
+        showModal: !state.showModal,
+      }));
+    }
+  }
+
+  handleSaveToClick() {
     this.setState((state) => ({
+      isSaved: !state.isSaved,
       showModal: !state.showModal,
     }));
   }
@@ -121,7 +136,11 @@ class App extends React.Component {
             incrementCount={this.incrementCount}
             decrementCount={this.decrementCount}
           />
-          <Modal showModal={showModal} handleSavedClick={this.handleSavedClick} />
+          <Modal
+            showModal={showModal}
+            handleSavedClick={this.handleSavedClick}
+            handleSaveToClick={this.handleSaveToClick}
+          />
         </Theme>
       );
     }
