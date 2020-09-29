@@ -5,6 +5,7 @@ export const Container = styled.div`
   .close {
     float: right;
     margin: 50px;
+    cursor: pointer;
   }
 `;
 

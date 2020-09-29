@@ -22,6 +22,7 @@ export const GridContainer = styled.div`
   .close {
     display: inline;
     float: left;
+    cursor: pointer;
   }
 
   p {
