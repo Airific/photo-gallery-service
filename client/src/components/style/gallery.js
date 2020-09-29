@@ -27,7 +27,7 @@ export const GridContainer = styled.div`
   }
 
   .mr-5 {
-    margin-right: 3px;
+    margin-right: 5px;
   }
 
   .btnContainer {
@@ -70,7 +70,7 @@ export const Col = styled.div`
     opacity: 1;
   }
 
-  margin: 0 0 0 2px;
+  margin: 0 0 0 3px;
   flex-basis: ${props => props.size === 1 ? '16.66%' : props.size === 2 ? '8.33%' : props.size === 3 ? '25%' : props.size === 4 ? '33.33%' : props.size === 5 ? '41.66%' : props.size === 6 ? '50%' : '100%' };
   overflow: hidden;
 
@@ -86,7 +86,7 @@ export const Col = styled.div`
   &.qtrImgContainer {
     height: 250px;
     &:first-child {
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
     img {
       height: 100%;
