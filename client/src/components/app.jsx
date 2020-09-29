@@ -22,13 +22,13 @@ class App extends React.Component {
     this.handleShowAllClick = this.handleShowAllClick.bind(this);
     this.incrementCount = this.incrementCount.bind(this);
     this.decrementCount = this.decrementCount.bind(this);
+    this.handleImgClick = this.handleImgClick.bind(this);
   }
 
   componentDidMount() {
     const pageId = window.location.pathname.split('/')[1];
     axios.get(`/listings/gallery/${pageId}`)
       .then((results) => {
-        console.log(results.data);
         this.setState({
           isLoad: true,
           imgList: results.data[0].imgURLs,
@@ -49,6 +49,16 @@ class App extends React.Component {
     this.setState((state) => ({
       showSlider: !state.showSlider,
       count: 0,
+    }));
+  }
+
+  handleImgClick(e) {
+    const imgTag = e.target;
+    const urlClicked = imgTag.getAttribute('src');
+    console.log(urlClicked);
+    this.setState((state) => ({
+      showSlider: !state.showSlider,
+      // count: 0,
     }));
   }
 
@@ -91,6 +101,7 @@ class App extends React.Component {
             imgList={imgList}
             handleShowAllClick={this.handleShowAllClick}
             handleSavedClick={this.handleSavedClick}
+            handleImgClick={this.handleImgClick}
           />
           <Slider
             showSlider={showSlider}

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
@@ -5,7 +7,10 @@ import {
 } from './style/gallery';
 
 const Gallery = (props) => {
-  const { handleSavedClick, handleShowAllClick } = props;
+  const {
+    handleImgClick, handleSavedClick, handleShowAllClick, imgList,
+  } = props;
+
   return (
     <Container>
       <GridContainer>
@@ -18,19 +23,19 @@ const Gallery = (props) => {
       </GridContainer>
       <GridContainer className="main">
         <Col className="mainImg" size={6}>
-          <img src="/img/photo-1505691938895-1758d7feb511.jpeg" alt="sofa" />
+          <img onClick={(e) => { handleImgClick(e); }} src={imgList[0].url} alt="sofa" />
         </Col>
         <Col size={6}>
           <Col className="qtrImgContainer" size={6}>
             <GridContainer>
-              <Col className="mr-5" size={6}><img src="/img/photo-1505692433770-36f19f51681d.jpeg" alt="sofa" /></Col>
-              <Col size={6}><img src="/img/photo-1505692952047-1a78307da8f2.jpeg" alt="sofa" /></Col>
+              <Col className="mr-5" size={6}><img src={imgList[1].url} alt="sofa" /></Col>
+              <Col size={6}><img src={imgList[2].url} alt="sofa" /></Col>
             </GridContainer>
           </Col>
           <Col className="qtrImgContainer" size={6}>
             <GridContainer>
-              <Col className="mr-5" size={6}><img src="/img/photo-1505693196193-bfd859ae01d9.jpeg" alt="sofa" /></Col>
-              <Col size={6}><img src="/img/photo-1505693416388-ac5ce068fe85.jpeg" alt="sofa" /></Col>
+              <Col className="mr-5" size={6}><img src={imgList[3].url} alt="sofa" /></Col>
+              <Col size={6}><img src={imgList[4].url} alt="sofa" /></Col>
             </GridContainer>
           </Col>
         </Col>
