@@ -52,13 +52,18 @@ class App extends React.Component {
     }));
   }
 
-  handleImgClick(e) {
+  handleImgClick(e, list) {
     const imgTag = e.target;
     const urlClicked = imgTag.getAttribute('src');
-    console.log(urlClicked);
+    let indexOfImg = 0;
+    list.forEach((img, idx) => {
+      if (img.url === urlClicked) {
+        indexOfImg = idx;
+      }
+    });
     this.setState((state) => ({
       showSlider: !state.showSlider,
-      // count: 0,
+      count: indexOfImg,
     }));
   }
 

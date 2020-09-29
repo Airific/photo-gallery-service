@@ -23,19 +23,19 @@ const Gallery = (props) => {
       </GridContainer>
       <GridContainer className="main">
         <Col className="mainImg" size={6}>
-          <img onClick={(e) => { handleImgClick(e); }} src={imgList[0].url} alt="sofa" />
+          <img onClick={(e) => { handleImgClick(e, imgList); }} src={imgList[0].url} alt="sofa" />
         </Col>
         <Col size={6}>
           <Col className="qtrImgContainer" size={6}>
             <GridContainer>
-              <Col className="mr-5" size={6}><img src={imgList[1].url} alt="sofa" /></Col>
-              <Col size={6}><img src={imgList[2].url} alt="sofa" /></Col>
+              <Col className="mr-5" size={6}><img src={imgList[1].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
+              <Col size={6}><img src={imgList[2].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
             </GridContainer>
           </Col>
           <Col className="qtrImgContainer" size={6}>
             <GridContainer>
-              <Col className="mr-5" size={6}><img src={imgList[3].url} alt="sofa" /></Col>
-              <Col size={6}><img src={imgList[4].url} alt="sofa" /></Col>
+              <Col className="mr-5" size={6}><img src={imgList[3].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
+              <Col size={6}><img src={imgList[4].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
             </GridContainer>
           </Col>
         </Col>
