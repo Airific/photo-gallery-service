@@ -7,7 +7,7 @@ export const GridContainer = styled.div`
   background-color: lightblue;
   display: grid;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   text-align: center;
   z-index: 9;
 
@@ -22,6 +22,7 @@ export const GridContainer = styled.div`
 
   p {
     display: inline;
+    margin-right: 4%;
   }
 
   .heart {
@@ -34,7 +35,7 @@ export const GridContainer = styled.div`
 `;
 
 export const Col = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 
   &.main {
@@ -43,20 +44,25 @@ export const Col = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 70vh;
   }
 
   button {
     position: absolute;
     display: inline;
+    cursor: pointer;
+    top: 45%;
+    // width: auto;
+
     &.left {
-      top: 40%;
       left: 0;
+      // transform: translate(-150px);
     }
     &.right {
-      top: 40%;
       right: 0;
+      // transform: translate(150px);
     }
   }
 
