@@ -86,13 +86,11 @@ class App extends React.Component {
   incrementCount() {
     const { count, imgList } = this.state;
     if (count === imgList.length - 1) {
-      console.log('reached max');
       this.setState({
         count: 0,
       });
     } else {
       this.setState((state) => ({ count: state.count + 1 }));
-      console.log(count);
     }
   }
 
@@ -100,13 +98,11 @@ class App extends React.Component {
     const { count } = this.state;
     const { imgList } = this.props;
     if (count === 0) {
-      console.log('reached zero');
       this.setState({
         count: imgList.length - 1,
       });
     } else {
       this.setState((state) => ({ count: state.count - 1 }));
-      console.log(count);
     }
   }
 

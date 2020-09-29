@@ -35,7 +35,7 @@ export const GridContainer = styled.div`
 `;
 
 export const Header = styled.div`
-border-bottom: 1px solid rgb(235, 235, 235);
+  border-bottom: 1px solid rgb(235, 235, 235);
   padding: 24px;
   font-size: 16px;
   font-weight: 500;
@@ -51,14 +51,16 @@ border-bottom: 1px solid rgb(235, 235, 235);
 
 export const ListItem = styled.div`
   padding: 20px;
-
+  cursor: pointer;
+  :hover {
+    background-color: rgb(247, 247, 247);
+  }
   img {
     float: left;
   }
 
   div {
     float: left;
-    background-color: white;
     width: auto;
     padding: 0 15px;
 

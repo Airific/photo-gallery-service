@@ -25,9 +25,13 @@ const Slider = (props) => {
             <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
           </div>
           <Col className="main">
-            <button onClick={() => { decrementCount(); }} className="left" type="button">leftArrow</button>
+            <button onClick={() => { decrementCount(); }} className="left" type="button">
+              <img src="../img/left-arrow.png" alt="prev" className="leftArrow" />
+            </button>
             <img src={imgLink} alt="interior" />
-            <button onClick={() => { incrementCount(); }} className="right" type="button">rightArrow</button>
+            <button onClick={() => { incrementCount(); }} className="right" type="button">
+              <img src="../img/next.png" alt="next" className="rightArrow" />
+            </button>
             <div className="description">{imgDes}</div>
           </Col>
         </div>
