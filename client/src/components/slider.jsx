@@ -48,24 +48,26 @@ class Slider extends React.Component {
     const imgDes = imgList[count].description;
     return (
       <GridContainer>
-        <Col>
-          {`${count + 1}/${imgList.length}`}
-        </Col>
-        <Col className="main">
-          <button onClick={() => { this.decrementCount(); }} className="left" type="button">leftArrow</button>
-          <img src={imgLink} alt="sofa" />
-          <button onClick={() => { this.incrementCount(); }} className="right" type="button">rightArrow</button>
-        </Col>
-        <Col>
-          {imgDes}
-        </Col>
+        <div>
+          <div className="header">
+            <button className="close" type="button"> X Close </button>
+            <p>{`${count + 1}/${imgList.length}`}</p>
+            <img className="heart" src="../img/heart.png" alt="heart" />
+          </div>
+          <Col className="main">
+            <button onClick={() => { this.decrementCount(); }} className="left" type="button">leftArrow</button>
+            <img src={imgLink} alt="interior" />
+            <button onClick={() => { this.incrementCount(); }} className="right" type="button">rightArrow</button>
+            <div className="description">{imgDes}</div>
+          </Col>
+        </div>
       </GridContainer>
     );
   }
 }
 
 // Slider.propTypes = {
-//   imgList: PropTypes.arrayOf(PropTypes.objects),
+//   imgList: PropTypes.array.isRequired,
 // };
 
 export default Slider;
