@@ -1,6 +1,13 @@
 /* eslint-disable */
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  .close {
+    float: right;
+    margin: 50px;
+  }
+`;
+
 export const GridContainer = styled.div`
   max-width: 1120px;
   margin: 0 auto;

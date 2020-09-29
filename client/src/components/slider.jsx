@@ -44,16 +44,18 @@ class Slider extends React.Component {
   }
 
   render() {
-    const { imgList, handleSavedClick } = this.props;
+    const {
+      imgList, handleSavedClick, showSlider, handleShowAllClick,
+    } = this.props;
     const { count } = this.state;
     const imgLink = imgList[count].url;
     const imgDes = imgList[count].description;
     return (
-      <Container>
+      <Container showSlider={showSlider}>
         <GridContainer>
           <div>
             <div className="header">
-              <button className="close" type="button"> X Close </button>
+              <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
               <p>{`${count + 1}/${imgList.length}`}</p>
               <img className="heart" src="../img/heart.png" alt="heart" onClick={() => { handleSavedClick(); }} />
             </div>

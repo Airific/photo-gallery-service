@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: none;
+  display: ${(props) => (props.showSlider ? 'block' : 'none')};
 `;
 
 export const GridContainer = styled.div`
