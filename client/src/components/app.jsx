@@ -31,12 +31,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoad } = this.state;
+    const { isLoad, imgList } = this.state;
+
     if (isLoad) {
       return (
         <Theme>
-          <Gallery />
-          <Slider />
+          <Gallery imgList={imgList} />
+          <Slider imgList={imgList} />
           {/* <Modal /> */}
         </Theme>
       );
