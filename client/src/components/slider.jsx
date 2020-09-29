@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
@@ -42,7 +44,7 @@ class Slider extends React.Component {
   }
 
   render() {
-    const { imgList } = this.props;
+    const { imgList, handleSavedClick } = this.props;
     const { count } = this.state;
     const imgLink = imgList[count].url;
     const imgDes = imgList[count].description;
@@ -52,7 +54,7 @@ class Slider extends React.Component {
           <div className="header">
             <button className="close" type="button"> X Close </button>
             <p>{`${count + 1}/${imgList.length}`}</p>
-            <img className="heart" src="../img/heart.png" alt="heart" />
+            <img className="heart" src="../img/heart.png" alt="heart" onClick={() => { handleSavedClick(); }} />
           </div>
           <Col className="main">
             <button onClick={() => { this.decrementCount(); }} className="left" type="button">leftArrow</button>

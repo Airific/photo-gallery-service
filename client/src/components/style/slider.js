@@ -30,6 +30,7 @@ export const GridContainer = styled.div`
     float: right;
     width: 15px;
     height: 15px;
+    cursor: pointer;
   }
 
 `;

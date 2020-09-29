@@ -33,6 +33,7 @@ export const GridContainer = styled.div`
     float: right;
     margin: 5px;
     padding: 5px 6px;
+    cursor: pointer;
   }
 
   .saveBtn:hover {
