@@ -21,7 +21,7 @@ const Slider = (props) => {
         <div>
           <div className="header">
             <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
-            <p>{`${count + 1}/${imgList.length}`}</p>
+            <p>{`${count + 1} / ${imgList.length}`}</p>
             <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
           </div>
           <Col className="main">
