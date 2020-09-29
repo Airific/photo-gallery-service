@@ -46,7 +46,7 @@ class App extends React.Component {
       return (
         <Theme>
           <Gallery imgList={imgList} handleSavedClick={this.handleSavedClick} />
-          {/* <Slider imgList={imgList} handleSavedClick={this.handleSavedClick} /> */}
+          <Slider imgList={imgList} handleSavedClick={this.handleSavedClick} />
           <Modal showModal={showModal} handleSavedClick={this.handleSavedClick} />
         </Theme>
       );

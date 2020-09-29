@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: none;
+`;
+
 export const GridContainer = styled.div`
   position: absolute;
   top: 0;
