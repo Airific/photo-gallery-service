@@ -27,7 +27,7 @@ export const Col = styled.div`
     max-height: 609px;
   }
 
-  p {
+  button {
     position: absolute;
     display: inline;
     &.left {
