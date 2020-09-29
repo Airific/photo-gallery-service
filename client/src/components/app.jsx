@@ -12,7 +12,10 @@ class App extends React.Component {
     this.state = {
       isLoad: false,
       imgList: [],
+      showModal: false,
     };
+
+    this.handleSavedClick = this.handleSavedClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,15 +33,21 @@ class App extends React.Component {
       });
   }
 
+  handleSavedClick() {
+    this.setState((state) => ({
+      showModal: !state.showModal,
+    }));
+  }
+
   render() {
-    const { isLoad, imgList } = this.state;
+    const { isLoad, imgList, showModal } = this.state;
 
     if (isLoad) {
       return (
         <Theme>
-          <Gallery imgList={imgList} />
-          <Slider imgList={imgList} />
-          {/* <Modal /> */}
+          <Gallery imgList={imgList} handleSavedClick={this.handleSavedClick} />
+          {/* <Slider imgList={imgList} handleSavedClick={this.handleSavedClick} /> */}
+          <Modal showModal={showModal} handleSavedClick={this.handleSavedClick} />
         </Theme>
       );
     }
