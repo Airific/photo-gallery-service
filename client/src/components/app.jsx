@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
 import Gallery from './gallery';
@@ -14,10 +15,13 @@ class App extends React.Component {
       imgList: [],
       showModal: false,
       showSlider: false,
+      count: 0,
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
     this.handleShowAllClick = this.handleShowAllClick.bind(this);
+    this.incrementCount = this.incrementCount.bind(this);
+    this.decrementCount = this.decrementCount.bind(this);
   }
 
   componentDidMount() {
@@ -44,12 +48,40 @@ class App extends React.Component {
   handleShowAllClick() {
     this.setState((state) => ({
       showSlider: !state.showSlider,
+      count: 0,
     }));
+  }
+
+  incrementCount() {
+    const { count, imgList } = this.state;
+    if (count === imgList.length - 1) {
+      console.log('reached max');
+      this.setState({
+        count: 0,
+      });
+    } else {
+      this.setState((state) => ({ count: state.count + 1 }));
+      console.log(count);
+    }
+  }
+
+  decrementCount() {
+    const { count } = this.state;
+    const { imgList } = this.props;
+    if (count === 0) {
+      console.log('reached zero');
+      this.setState({
+        count: imgList.length - 1,
+      });
+    } else {
+      this.setState((state) => ({ count: state.count - 1 }));
+      console.log(count);
+    }
   }
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider,
+      isLoad, imgList, showModal, showSlider, resetSlider, count,
     } = this.state;
 
     if (isLoad) {
@@ -65,6 +97,10 @@ class App extends React.Component {
             imgList={imgList}
             handleSavedClick={this.handleSavedClick}
             handleShowAllClick={this.handleShowAllClick}
+            resetSlider={resetSlider}
+            count={count}
+            incrementCount={this.incrementCount}
+            decrementCount={this.decrementCount}
           />
           <Modal showModal={showModal} handleSavedClick={this.handleSavedClick} />
         </Theme>
