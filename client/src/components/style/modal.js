@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  display: ${(props) => (props.showModal ? 'block' : 'none')};
   width: 100%;
   z-index: 9;
 
@@ -37,6 +38,7 @@ border-bottom: 1px solid #aaa;
   padding: 15px;
   span {
     float: left;
+    cursor: pointer;
   }
 `;
 

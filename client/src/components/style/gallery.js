@@ -1,6 +1,14 @@
 /* eslint-disable */
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  .close {
+    float: right;
+    margin: 50px;
+    cursor: pointer;
+  }
+`;
+
 export const GridContainer = styled.div`
   max-width: 1120px;
   margin: 0 auto;
@@ -33,6 +41,7 @@ export const GridContainer = styled.div`
     float: right;
     margin: 5px;
     padding: 5px 6px;
+    cursor: pointer;
   }
 
   .saveBtn:hover {

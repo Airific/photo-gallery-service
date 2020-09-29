@@ -28,24 +28,14 @@ const headerSchema = new Schema({
 
 const Header = mongoose.model('Header', headerSchema);
 
+// functions
+
 function getImgById(id, callback) {
-  Image.find({ id }, callback)
-    .then((result) => {
-      callback(null, result);
-    })
-    .catch((err) => {
-      callback(err);
-    });
+  Image.find({ id }, callback);
 }
 
 function getHeaderById(id, callback) {
-  Header.find({ id }, callback)
-    .then((result) => {
-      callback(null, result);
-    })
-    .catch((err) => {
-      callback(err);
-    });
+  Header.find({ id }, callback);
 }
 
 module.exports = {
