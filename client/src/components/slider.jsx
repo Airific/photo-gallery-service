@@ -44,12 +44,12 @@ class Slider extends React.Component {
   render() {
     const { imgList } = this.props;
     const { count } = this.state;
-    console.log(imgList[count].url);
     const imgLink = imgList[count].url;
+    const imgDes = imgList[count].description;
     return (
       <GridContainer>
         <Col>
-          1/10
+          {`${count + 1}/${imgList.length}`}
         </Col>
         <Col className="main">
           <button onClick={() => { this.decrementCount(); }} className="left" type="button">leftArrow</button>
@@ -57,7 +57,7 @@ class Slider extends React.Component {
           <button onClick={() => { this.incrementCount(); }} className="right" type="button">rightArrow</button>
         </Col>
         <Col>
-          Description
+          {imgDes}
         </Col>
       </GridContainer>
     );
