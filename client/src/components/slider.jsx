@@ -6,71 +6,39 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Container, GridContainer, Col } from './style/slider';
 
-class Slider extends React.Component {
-  constructor(props) {
-    super(props);
+const Slider = (props) => {
+  const {
+    imgList,
+    handleSavedClick,
+    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved,
+  } = props;
+  const imgLink = imgList[count].url;
+  const imgDes = imgList[count].description;
 
-    this.state = {
-      count: 0,
-    };
-  }
-
-  incrementCount() {
-    const { count } = this.state;
-    const { imgList } = this.props;
-    if (count === imgList.length - 1) {
-      console.log('reached max');
-      this.setState({
-        count: 0,
-      });
-    } else {
-      this.setState((state) => ({ count: state.count + 1 }));
-      console.log(count);
-    }
-  }
-
-  decrementCount() {
-    const { count } = this.state;
-    const { imgList } = this.props;
-    if (count === 0) {
-      console.log('reached zero');
-      this.setState({
-        count: imgList.length - 1,
-      });
-    } else {
-      this.setState((state) => ({ count: state.count - 1 }));
-      console.log(count);
-    }
-  }
-
-  render() {
-    const {
-      imgList, handleSavedClick, showSlider, handleShowAllClick,
-    } = this.props;
-    const { count } = this.state;
-    const imgLink = imgList[count].url;
-    const imgDes = imgList[count].description;
-    return (
-      <Container showSlider={showSlider}>
-        <GridContainer>
-          <div>
-            <div className="header">
-              <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
-              <p>{`${count + 1}/${imgList.length}`}</p>
-              <img className="heart" src="../img/heart.png" alt="heart" onClick={() => { handleSavedClick(); }} />
-            </div>
-            <Col className="main">
-              <button onClick={() => { this.decrementCount(); }} className="left" type="button">leftArrow</button>
-              <img src={imgLink} alt="interior" />
-              <button onClick={() => { this.incrementCount(); }} className="right" type="button">rightArrow</button>
-              <div className="description">{imgDes}</div>
-            </Col>
+  return (
+    <Container showSlider={showSlider}>
+      <GridContainer>
+        <div>
+          <div className="header">
+            <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
+            <p>{`${count + 1} / ${imgList.length}`}</p>
+            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
           </div>
-        </GridContainer>
-      </Container>
-    );
-  }
-}
+          <Col className="main">
+            <button onClick={() => { decrementCount(); }} className="left" type="button">
+              <img src="../img/left-arrow.png" alt="prev" className="leftArrow" />
+            </button>
+            <img src={imgLink} alt="interior" />
+            <button onClick={() => { incrementCount(); }} className="right" type="button">
+              <img src="../img/next.png" alt="next" className="rightArrow" />
+            </button>
+            <div className="description">{imgDes}</div>
+          </Col>
+        </div>
+      </GridContainer>
+    </Container>
+  );
+};
 
 // Slider.propTypes = {
 //   imgList: PropTypes.array.isRequired,

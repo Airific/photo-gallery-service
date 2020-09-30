@@ -8,7 +8,7 @@ export const GridContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: lightblue;
+  background-color: #fff;
   display: grid;
   width: 100%;
   height: 100vh;
@@ -56,20 +56,39 @@ export const Col = styled.div`
   }
 
   button {
+    border-radius: 50%;
+    border: 1px solid rgb(176, 176, 176);
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
     position: absolute;
     display: inline;
     cursor: pointer;
     top: 45%;
-    // width: auto;
+
+    :hover {
+      background-color: rgb(245, 245, 245);
+    }
 
     &.left {
-      left: 0;
+      left: 4%;
       // transform: translate(-150px);
     }
     &.right {
-      right: 0;
+      right: 4%;
       // transform: translate(150px);
     }
+
+    .leftArrow {
+      width: 10px;
+      height: 10px;
+    }
+
+    .rightArrow {
+      width: 10px;
+      height: 10px;
+    }
+
   }
 
   .description {

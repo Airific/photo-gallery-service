@@ -7,36 +7,36 @@ import {
 } from './style/modal';
 
 const Modal = (props) => {
-  const { showModal, handleSavedClick } = props;
+  const { showModal, handleSavedClick, handleSaveToClick } = props;
   return (
     <Container showModal={showModal}>
       <GridContainer>
         <Header>
           <span onClick={() => { handleSavedClick(); }}>X</span>
-          Save to a List
+          Save to a list
         </Header>
-        <ListItem>
+        <ListItem onClick={() => { handleSaveToClick(); }}>
           <img alt="pic" />
           <div>
-            <p>Any time</p>
-            <p>Vacation Places</p>
-            <p>2 Stays</p>
+            <p className="top">Any time</p>
+            <p className="mid">Vacation Places</p>
+            <p className="bottom">2 Stays</p>
           </div>
         </ListItem>
-        <ListItem>
+        <ListItem onClick={() => { handleSaveToClick(); }}>
           <img alt="pic" />
           <div>
-            <p>Any time</p>
-            <p>Dream Homes</p>
-            <p>Nothing saved yet</p>
+            <p className="top">Any time</p>
+            <p className="mid">Dream Homes</p>
+            <p className="bottom">Nothing saved yet</p>
           </div>
         </ListItem>
-        <ListItem>
+        <ListItem onClick={() => { handleSaveToClick(); }}>
           <img alt="pic" />
           <div>
-            <p>Any time</p>
-            <p>Tahoe</p>
-            <p>Nothing saved yet</p>
+            <p className="top">Any time</p>
+            <p className="mid">Tahoe</p>
+            <p className="bottom">Nothing saved yet</p>
           </div>
         </ListItem>
         <Footer>Create a list</Footer>
