@@ -2,13 +2,17 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-// import { Gallery } from '../gallery';
-
 import App from '../app';
 
-describe('<App />', () => {
-  it('renders one <div>', () => {
-    const wrapper = mount(<App />);
-    expect(wrapper.find('div')).toExist();
+describe('App component unit test', () => {
+  it('should render the value of color', () => {
+    const wrapper = shallow(<App />);
+    wrapper.setState({ isLoad: true });
+    expect(wrapper.state('isLoad')).toEqual(true);
+  });
+
+  it('renders without crashing', () => {
+    const wrapper = render(<App />);
+    expect(wrapper).toBeDefined();
   });
 });
