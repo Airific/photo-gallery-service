@@ -21,4 +21,9 @@ describe('Gallery unit test', () => {
     const wrapper = render(<Gallery imgList={props.imgList} />);
     expect(wrapper).toBeDefined();
   });
+
+  it('should render buttons to the page', () => {
+    const wrapper = shallow(<Gallery imgList={props.imgList} />);
+    expect(wrapper.find('button')).toExist();
+  });
 });

@@ -15,4 +15,9 @@ describe('App component unit test', () => {
     const wrapper = render(<App />);
     expect(wrapper).toBeDefined();
   });
+
+  it('should have isLoad state', () => {
+    const wrapper = mount(<App />);
+    expect(wrapper).toHaveState('isLoad');
+  });
 });
