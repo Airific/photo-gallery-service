@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  .close {
+  .showAll {
     float: right;
     margin: 50px;
     cursor: pointer;

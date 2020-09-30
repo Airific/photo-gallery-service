@@ -12,7 +12,7 @@ const Modal = (props) => {
     <Container showModal={showModal}>
       <GridContainer>
         <Header>
-          <span onClick={() => { handleSavedClick(); }}>X</span>
+          <span className="cancel" onClick={() => { handleSavedClick(); }}>X</span>
           Save to a list
         </Header>
         <ListItem onClick={() => { handleSaveToClick(); }}>
