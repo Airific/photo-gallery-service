@@ -13,8 +13,6 @@ describe('Gallery unit test', () => {
       { url: 'abc', description: 'testing' },
       { url: 'abc', description: 'testing' },
     ],
-    showModal: false,
-    handleSavedClick: jest.fn(),
   };
 
   it('renders without crashing', () => {
@@ -25,5 +23,15 @@ describe('Gallery unit test', () => {
   it('should render buttons to the page', () => {
     const wrapper = shallow(<Gallery imgList={props.imgList} />);
     expect(wrapper.find('button')).toExist();
+  });
+
+  it('should render column with size 6', () => {
+    const wrapper = shallow(<Gallery size={6} imgList={props.imgList} />);
+    expect(wrapper).toBeDefined();
+  });
+
+  it('should render column with size 12', () => {
+    const wrapper = shallow(<Gallery size={12} imgList={props.imgList} />);
+    expect(wrapper).toBeDefined();
   });
 });
