@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { render } from 'enzyme';
 import Modal from '../modal';
 
 describe('Modal unit test', () => {

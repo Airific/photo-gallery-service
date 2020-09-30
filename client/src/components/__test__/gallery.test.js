@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import Gallery from '../gallery';
 
 describe('Gallery unit test', () => {

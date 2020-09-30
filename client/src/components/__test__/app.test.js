@@ -17,7 +17,6 @@ describe('App component unit test', () => {
     showSlider: false,
     isSaved: false,
     count: 1,
-    // handleSavedClick: jest.fn(),
   };
 
   it('should render the value of color', () => {
@@ -36,7 +35,9 @@ describe('App component unit test', () => {
     expect(wrapper).toHaveState('isLoad');
   });
 
-  it('check showModal state with .saveBtn click', () => {
+  // tests for gallery component
+
+  it('check showModal state change with .saveBtn click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
       isLoad: true, count: 1, imgList: props.imgList, showModal: props.showModal,
@@ -46,7 +47,7 @@ describe('App component unit test', () => {
     expect(wrapper.state().showModal).toBe(true);
   });
 
-  it('check showSlider state with .showAll click', () => {
+  it('check showSlider state change with .showAll click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
       isLoad: true, count: 1, imgList: props.imgList, showSlider: props.showSlider,
@@ -56,7 +57,17 @@ describe('App component unit test', () => {
     expect(wrapper.state().showSlider).toBe(true);
   });
 
-  it('check isSaved state with .saveBtn click', () => {
+  it('check showSlider state change with image click', () => {
+    const wrapper = mount(<App />);
+    wrapper.setState({
+      isLoad: true, count: 1, imgList: props.imgList, showSlider: props.showSlider,
+    });
+    const minButton = wrapper.find('img');
+    minButton.find('img').at(4).simulate('click');
+    expect(wrapper.state().showSlider).toBe(true);
+  });
+
+  it('check isSaved state does not change with .cancel click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
       isLoad: true, count: 1, imgList: props.imgList, isSaved: props.isSaved,
@@ -66,7 +77,9 @@ describe('App component unit test', () => {
     expect(wrapper.state().isSaved).toBe(false);
   });
 
-  it('check count state increase by 1 with .right click', () => {
+  // tests for slider component
+
+  it('check count state increase by 1 with one .right click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
       isLoad: true, count: 1, imgList: props.imgList,
@@ -76,7 +89,7 @@ describe('App component unit test', () => {
     expect(wrapper.state().count).toBe(2);
   });
 
-  it('check count state decrease by 1 with .left click', () => {
+  it('check count state decrease by 1 with one .left click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
       isLoad: true, count: 1, imgList: props.imgList,
@@ -84,5 +97,17 @@ describe('App component unit test', () => {
     const minButton = wrapper.find('button');
     minButton.find('.left').simulate('click');
     expect(wrapper.state().count).toBe(0);
+  });
+
+  // test for modal component
+
+  it('check isSaved state change with list item click', () => {
+    const wrapper = mount(<App />);
+    wrapper.setState({
+      isLoad: true, count: 1, imgList: props.imgList, isSaved: props.isSaved,
+    });
+    const minButton = wrapper.find('p');
+    minButton.find('.top').at(0).simulate('click');
+    expect(wrapper.state().isSaved).toBe(true);
   });
 });
