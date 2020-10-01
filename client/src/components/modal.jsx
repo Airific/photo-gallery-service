@@ -8,10 +8,18 @@ import {
 
 const Modal = (props) => {
   const {
-    showModal, handleSavedClick, handleSaveToClick, imgList
+    showModal, handleSavedClick, handleSaveToClick, imgList, isModalClicked,
   } = props;
+
+  let fade = '';
+  if (showModal && isModalClicked) {
+    fade = 'slideIn';
+  } else if (!showModal && isModalClicked) {
+    fade = 'slideOut';
+  }
+
   return (
-    <Container showModal={showModal}>
+    <Container className={fade} showModal={showModal}>
       <GridContainer>
         <Header>
           <span className="cancel" onClick={() => { handleSavedClick(); }}>X</span>

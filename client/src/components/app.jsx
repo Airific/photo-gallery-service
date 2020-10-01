@@ -51,6 +51,7 @@ class App extends React.Component {
     } else {
       this.setState((state) => ({
         showModal: !state.showModal,
+        isModalClicked: true,
       }));
     }
   }
@@ -83,6 +84,7 @@ class App extends React.Component {
       showSlider: !state.showSlider,
       count: indexOfImg,
       isClick: true,
+      isModalClicked: false,
     }));
   }
 
@@ -110,7 +112,7 @@ class App extends React.Component {
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved, isClick,
+      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked,
     } = this.state;
 
     if (isLoad) {
@@ -139,6 +141,7 @@ class App extends React.Component {
           <Modal
             showModal={showModal}
             imgList={imgList}
+            isModalClicked={isModalClicked}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
           />
