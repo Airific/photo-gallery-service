@@ -26,6 +26,7 @@ class App extends React.Component {
     this.decrementCount = this.decrementCount.bind(this);
     this.handleImgClick = this.handleImgClick.bind(this);
     this.handleSaveToClick = this.handleSaveToClick.bind(this);
+    this.handleOverlayClick = this.handleOverlayClick.bind(this);
   }
 
   componentDidMount() {
@@ -88,6 +89,12 @@ class App extends React.Component {
     }));
   }
 
+  handleOverlayClick() {
+    this.setState({
+      showModal: false,
+    });
+  }
+
   incrementCount() {
     const { count, imgList } = this.state;
     if (count === imgList.length - 1) {
@@ -144,6 +151,7 @@ class App extends React.Component {
             isModalClicked={isModalClicked}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
+            handleOverlayClick={this.handleOverlayClick}
           />
         </Theme>
       );

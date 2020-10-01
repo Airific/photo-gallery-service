@@ -8,7 +8,7 @@ import {
 
 const Modal = (props) => {
   const {
-    showModal, handleSavedClick, handleSaveToClick, imgList, isModalClicked,
+    showModal, handleSavedClick, handleSaveToClick, imgList, isModalClicked, handleOverlayClick,
   } = props;
 
   let fade = '';
@@ -51,7 +51,7 @@ const Modal = (props) => {
         </ListItem>
         <Footer>Create a list</Footer>
       </GridContainer>
-      <Overlay />
+      <Overlay onClick={() => { handleOverlayClick(); }} />
     </Container>
   );
 };
