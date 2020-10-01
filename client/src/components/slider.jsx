@@ -10,13 +10,19 @@ const Slider = (props) => {
   const {
     imgList,
     handleSavedClick,
-    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved,
+    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved, isClick,
   } = props;
   const imgLink = imgList[count].url;
   const imgDes = imgList[count].description;
+  let fade = '';
+  if (showSlider && isClick) {
+    fade = 'fadeIn';
+  } else if (!showSlider && isClick) {
+    fade = 'fadeOut';
+  }
 
   return (
-    <Container className={showSlider ? 'fadeIn' : 'fadeOut'} showSlider={showSlider}>
+    <Container className={fade} showSlider={showSlider}>
       <GridContainer>
         <div>
           <div className="header">

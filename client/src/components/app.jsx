@@ -17,6 +17,7 @@ class App extends React.Component {
       showSlider: false,
       count: 0,
       isSaved: false,
+      isClick: false,
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
@@ -65,6 +66,7 @@ class App extends React.Component {
     this.setState((state) => ({
       showSlider: !state.showSlider,
       count: 0,
+      isClick: true,
     }));
   }
 
@@ -80,6 +82,7 @@ class App extends React.Component {
     this.setState((state) => ({
       showSlider: !state.showSlider,
       count: indexOfImg,
+      isClick: true,
     }));
   }
 
@@ -107,7 +110,7 @@ class App extends React.Component {
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved,
+      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved, isClick,
     } = this.state;
 
     if (isLoad) {
@@ -122,6 +125,7 @@ class App extends React.Component {
             handleImgClick={this.handleImgClick}
           />
           <Slider
+            isClick={isClick}
             showSlider={showSlider}
             imgList={imgList}
             isSaved={isSaved}

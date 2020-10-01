@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  // display: ${(props) => (props.showSlider ? 'block' : 'none')};
-
+  opacity: 0;
   animation-duration: 0.5s;
+  transform: translateY(360px);
 
   &.fadeIn {
     animation-name: fadeIn;
