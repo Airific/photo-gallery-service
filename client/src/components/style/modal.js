@@ -51,12 +51,16 @@ export const Header = styled.div`
 
 export const ListItem = styled.div`
   padding: 20px;
+  margin-left: 13px;
   cursor: pointer;
   :hover {
     background-color: rgb(247, 247, 247);
   }
   img {
     float: left;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
   }
 
   div {

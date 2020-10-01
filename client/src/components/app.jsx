@@ -138,6 +138,7 @@ class App extends React.Component {
           />
           <Modal
             showModal={showModal}
+            imgList={imgList}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
           />

@@ -14,6 +14,7 @@ const Slider = (props) => {
   } = props;
   const imgLink = imgList[count].url;
   const imgDes = imgList[count].description;
+
   let fade = '';
   if (showSlider && isClick) {
     fade = 'fadeIn';

@@ -7,7 +7,9 @@ import {
 } from './style/modal';
 
 const Modal = (props) => {
-  const { showModal, handleSavedClick, handleSaveToClick } = props;
+  const {
+    showModal, handleSavedClick, handleSaveToClick, imgList
+  } = props;
   return (
     <Container showModal={showModal}>
       <GridContainer>
@@ -16,7 +18,7 @@ const Modal = (props) => {
           Save to a list
         </Header>
         <ListItem onClick={() => { handleSaveToClick(); }}>
-          <img alt="pic" />
+          <img src={imgList[1].url} alt="pic" />
           <div>
             <p className="top">Any time</p>
             <p className="mid">Vacation Places</p>
@@ -24,7 +26,7 @@ const Modal = (props) => {
           </div>
         </ListItem>
         <ListItem onClick={() => { handleSaveToClick(); }}>
-          <img alt="pic" />
+          <img src={imgList[1].url} alt="pic" />
           <div>
             <p className="top">Any time</p>
             <p className="mid">Dream Homes</p>
@@ -32,7 +34,7 @@ const Modal = (props) => {
           </div>
         </ListItem>
         <ListItem onClick={() => { handleSaveToClick(); }}>
-          <img alt="pic" />
+          <img src={imgList[1].url} alt="pic" />
           <div>
             <p className="top">Any time</p>
             <p className="mid">Tahoe</p>
