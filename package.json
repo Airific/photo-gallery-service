@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "jest --coverage",
+    "test:watch": "jest --watchAll",
     "start": "nodemon ./server/index.js",
     "build-dev": "webpack -d --watch",
     "seed": "node seed.js"

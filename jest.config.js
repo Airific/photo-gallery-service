@@ -3,7 +3,7 @@
 
 module.exports = {
   coverageDirectory: 'coverage',
-  coverageReporters: ['text'],
+  coverageReporters: ['text', 'html'],
   moduleFileExtensions: ['js', 'jsx'],
   setupFilesAfterEnv: ['jest-enzyme'],
   // setupFiles: [

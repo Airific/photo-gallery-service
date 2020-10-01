@@ -1,8 +1,7 @@
-/* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  .close {
+  .showAll {
     float: right;
     margin: 50px;
     cursor: pointer;
@@ -71,7 +70,7 @@ export const Col = styled.div`
   }
 
   margin: 0 0 0 3px;
-  flex-basis: ${(props) => (props.size === 1 ? '16.66%' : props.size === 2 ? '8.33%' : props.size === 3 ? '25%' : props.size === 4 ? '33.33%' : props.size === 5 ? '41.66%' : props.size === 6 ? '50%' : '100%')};
+  flex-basis: ${(props) => (props.size === 6 ? '50%' : '100%')};
   overflow: hidden;
 
   img {

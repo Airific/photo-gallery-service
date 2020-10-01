@@ -40,7 +40,7 @@ const Gallery = (props) => {
           </Col>
         </Col>
       </GridContainer>
-      <button onClick={() => { handleShowAllClick(); }} className="close" type="button">Show All</button>
+      <button onClick={() => { handleShowAllClick(); }} className="showAll" type="button">Show All</button>
     </Container>
   );
 };

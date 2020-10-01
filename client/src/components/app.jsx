@@ -95,8 +95,7 @@ class App extends React.Component {
   }
 
   decrementCount() {
-    const { count } = this.state;
-    const { imgList } = this.props;
+    const { count, imgList } = this.state;
     if (count === 0) {
       this.setState({
         count: imgList.length - 1,
