@@ -1,7 +1,43 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: ${(props) => (props.showSlider ? 'block' : 'none')};
+  // display: ${(props) => (props.showSlider ? 'block' : 'none')};
+
+  animation-duration: 0.5s;
+
+  &.fadeIn {
+    animation-name: fadeIn;
+    opacity: 1;
+    transform: translateY(-570px);
+  }
+
+  &.fadeOut {
+    animation-name: fadeOut;
+    opacity: 0;
+    transform: translateY(360px);
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-570px);
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(-570px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(360px);
+    }
+  }
 `;
 
 export const GridContainer = styled.div`
@@ -13,7 +49,7 @@ export const GridContainer = styled.div`
   width: 100%;
   height: 100vh;
   text-align: center;
-  z-index: 9;
+  z-index: 99;
 
   .header {
     margin: 50px;
@@ -23,19 +59,44 @@ export const GridContainer = styled.div`
     display: inline;
     float: left;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+    background-color: rgba(34, 34, 34, 0.1);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
   }
 
   p {
     display: inline;
+    font-weight: 300;
     margin-right: 4%;
   }
 
-  .heart {
+  .heart,
+  .share {
     display: inline;
     float: right;
-    width: 15px;
-    height: 15px;
     cursor: pointer;
+    border-radius: 50%;
+    padding: 8px;
+    margin: -5px;
+    img {
+      width: 15px;
+      height: 15px;
+      &.shareIcon {
+        width: 18px;
+        height: 18px;
+        margin-top: -1px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .heart:hover {
+    background-color: rgb(245, 245, 245);
   }
 
 `;
@@ -52,7 +113,15 @@ export const Col = styled.div`
   img {
     display: block;
     margin: 0 auto;
-    height: 70vh;
+    height: auto;
+    max-width: 60%;
+    @media screen and (min-width: 992px){
+      max-width: 70%;
+    }
+    @media screen and (min-width: 1280px){
+      max-width: 100%;
+      height: 70vh;
+    }
   }
 
   button {

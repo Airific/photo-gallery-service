@@ -116,6 +116,7 @@ class App extends React.Component {
           <Gallery
             imgList={imgList}
             isSaved={isSaved}
+            showSlider={showSlider}
             handleShowAllClick={this.handleShowAllClick}
             handleSavedClick={this.handleSavedClick}
             handleImgClick={this.handleImgClick}

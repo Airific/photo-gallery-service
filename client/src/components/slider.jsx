@@ -16,13 +16,18 @@ const Slider = (props) => {
   const imgDes = imgList[count].description;
 
   return (
-    <Container showSlider={showSlider}>
+    <Container className={showSlider ? 'fadeIn' : 'fadeOut'} showSlider={showSlider}>
       <GridContainer>
         <div>
           <div className="header">
             <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
             <p>{`${count + 1} / ${imgList.length}`}</p>
-            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
+            <div className="heart">
+              <img src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
+            </div>
+            <div className="share">
+              <img className="shareIcon" src="../img/up-arrow.png" alt="share" />
+            </div>
           </div>
           <Col className="main">
             <button onClick={() => { decrementCount(); }} className="left" type="button">
