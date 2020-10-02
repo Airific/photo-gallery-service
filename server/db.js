@@ -20,8 +20,8 @@ const headerSchema = new Schema({
   id: Number,
   title: String,
   address: String,
-  isSave: Boolean,
   reviews: Number,
+  totalReviews: Number,
   superhost: Boolean,
 
 });
@@ -40,6 +40,8 @@ function getHeaderById(id, callback) {
 
 module.exports = {
   db,
+  Header,
+  Image,
   getImgById,
   getHeaderById,
 };

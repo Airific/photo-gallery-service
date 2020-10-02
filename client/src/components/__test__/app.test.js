@@ -13,6 +13,11 @@ describe('App component unit test', () => {
       { url: 'abc', description: 'testing' },
       { url: 'abc', description: 'testing' },
     ],
+    headInfo: [
+      {
+        superhost: true, title: 'tahoe', address: '111 hello st', reviews: 3, totalReviews: 200,
+      },
+    ],
     showModal: false,
     showSlider: false,
     isSaved: false,
@@ -40,7 +45,11 @@ describe('App component unit test', () => {
   it('check showModal state change with .saveBtn click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList, showModal: props.showModal,
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      showModal: props.showModal,
+      headInfo: props.headInfo,
     });
     const minButton = wrapper.find('button');
     minButton.find('.saveBtn').simulate('click');
@@ -50,7 +59,11 @@ describe('App component unit test', () => {
   it('check showSlider state change with .showAll click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList, showSlider: props.showSlider,
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      showSlider: props.showSlider,
+      headInfo: props.headInfo,
     });
     const minButton = wrapper.find('button');
     minButton.find('.showAll').simulate('click');
@@ -60,7 +73,11 @@ describe('App component unit test', () => {
   it('check showSlider state change with image click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList, showSlider: props.showSlider,
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      showSlider: props.showSlider,
+      headInfo: props.headInfo,
     });
     const minButton = wrapper.find('img');
     minButton.find('img').at(4).simulate('click');
@@ -70,7 +87,11 @@ describe('App component unit test', () => {
   it('check isSaved state does not change with .cancel click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList, isSaved: props.isSaved,
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      isSaved: props.isSaved,
+      headInfo: props.headInfo,
     });
     const minButton = wrapper.find('span');
     minButton.find('.cancel').simulate('click');
@@ -82,7 +103,7 @@ describe('App component unit test', () => {
   it('check count state increase by 1 with one .right click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList,
+      isLoad: true, count: 1, imgList: props.imgList, headInfo: props.headInfo,
     });
     const minButton = wrapper.find('button');
     minButton.find('.right').simulate('click');
@@ -92,7 +113,7 @@ describe('App component unit test', () => {
   it('check count state decrease by 1 with one .left click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList,
+      isLoad: true, count: 1, imgList: props.imgList, headInfo: props.headInfo,
     });
     const minButton = wrapper.find('button');
     minButton.find('.left').simulate('click');
@@ -104,7 +125,11 @@ describe('App component unit test', () => {
   it('check isSaved state change with list item click', () => {
     const wrapper = mount(<App />);
     wrapper.setState({
-      isLoad: true, count: 1, imgList: props.imgList, isSaved: props.isSaved,
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      isSaved: props.isSaved,
+      headInfo: props.headInfo,
     });
     const minButton = wrapper.find('p');
     minButton.find('.top').at(0).simulate('click');

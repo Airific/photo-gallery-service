@@ -8,7 +8,7 @@ export const Container = styled.div`
   &.fadeIn {
     animation-name: fadeIn;
     opacity: 1;
-    transform: translateY(-570px);
+    transform: translateY(-590px);
   }
 
   &.fadeOut {
@@ -24,14 +24,14 @@ export const Container = styled.div`
     }
     100% {
       opacity: 1;
-      transform: translateY(-570px);
+      transform: translateY(-590px);
     }
   }
 
   @keyframes fadeOut {
     0% {
       opacity: 1;
-      transform: translateY(-570px);
+      transform: translateY(-590px);
     }
     100% {
       opacity: 0;

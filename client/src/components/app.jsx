@@ -5,6 +5,7 @@ import Gallery from './gallery';
 import Modal from './modal';
 import Theme from './style/theme';
 import Slider from './slider';
+import Header from './header';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.state = {
       isLoad: false,
       imgList: [],
+      headInfo: [],
       showModal: false,
       showSlider: false,
       count: 0,
@@ -33,12 +35,14 @@ class App extends React.Component {
   componentDidMount() {
     const pageId = window.location.pathname.split('/')[1];
     axios.get(`/listings/gallery/${pageId}`)
-      .then((results) => {
-        this.setState({
-          isLoad: true,
-          imgList: results.data[0].imgURLs,
-        });
-      })
+      .then((results) => axios.get(`/listings/header/${pageId}`)
+        .then((results2) => {
+          this.setState({
+            isLoad: true,
+            imgList: results.data[0].imgURLs,
+            headInfo: results2.data,
+          });
+        }))
       .catch((err) => {
         console.log(err);
       });
@@ -120,18 +124,22 @@ class App extends React.Component {
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked,
+      isLoad, imgList,
+      showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked, headInfo,
     } = this.state;
 
     if (isLoad) {
       return (
         <Theme>
+          <Header
+            headInfo={headInfo}
+            isSaved={isSaved}
+            handleSavedClick={this.handleSavedClick}
+          />
           <Gallery
             imgList={imgList}
-            isSaved={isSaved}
             showSlider={showSlider}
             handleShowAllClick={this.handleShowAllClick}
-            handleSavedClick={this.handleSavedClick}
             handleImgClick={this.handleImgClick}
           />
           <Slider

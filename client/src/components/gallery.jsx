@@ -8,23 +8,11 @@ import {
 
 const Gallery = (props) => {
   const {
-    handleImgClick, handleSavedClick, handleShowAllClick, imgList, isSaved, showSlider,
+    handleImgClick, handleShowAllClick, imgList, showSlider,
   } = props;
 
   return (
     <Container showSlider={showSlider}>
-      <GridContainer>
-        <Col className="btnContainer" size={12}>
-          <button className="saveBtn" type="button" onClick={() => { handleSavedClick(); }}>
-            <p>{isSaved ? 'Saved' : 'Save'}</p>
-            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" />
-          </button>
-          <button className="shareBtn" type="button">
-            <p>Share</p>
-            <img className="upload" src="../img/up-arrow.png" alt="upload" />
-          </button>
-        </Col>
-      </GridContainer>
       <GridContainer className="main">
         <Col className="mainImg" size={6}>
           <img onClick={(e) => { handleImgClick(e, imgList); }} src={imgList[0].url} alt="sofa" />
