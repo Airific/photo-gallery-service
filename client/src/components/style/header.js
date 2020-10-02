@@ -11,7 +11,6 @@ export const Container = styled.div`
     font-size: 24px;
     font-weight: 500;
     line-height: 23px;
-
   }
 `;
 
@@ -57,13 +56,35 @@ export const Col = styled.div`
   }
 
   img {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
   }
 
   div {
     display: inline-block;
     margin-top: -5px;
     float: right;
+  }
+
+  .reviewNum {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .reviews {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgb(113, 113, 113)
+  }
+
+  .address {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgb(113, 113, 113);
+    text-decoration: underline;
   }
 `;

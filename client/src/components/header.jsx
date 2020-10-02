@@ -15,9 +15,9 @@ const Header = (props) => {
       <GridContainer>
         <Col className="btnContainer" size={12}>
           <img className="star" src="../img/star-icon.png" alt="red-star" />
-          <span>
-            {`${headInfo[0].reviews}(${headInfo[0].totalReviews}) ${host} · ${headInfo[0].address}`}
-          </span>
+          <span className="reviewNum">{headInfo[0].reviews}</span>
+          <span className="reviews">{` (${headInfo[0].totalReviews}) ${host} · `}</span>
+          <span className="address">{headInfo[0].address}</span>
           <div>
             <button className="saveBtn" type="button" onClick={() => { handleSavedClick(); }}>
               <p>{isSaved ? 'Saved' : 'Save'}</p>
