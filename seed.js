@@ -79,7 +79,7 @@ function randomData() {
   const beds = ['4 Beds', '5 Beds', '3 Beds', '6 Beds'];
   const nearby = ['Close to town', '5mins walk from Central', 'Close to grocery stores', 'Near Attractions'];
 
-  const title = `${descrip[Math.floor(Math.random() * 4)]}, ${beds[Math.floor(Math.random() * 4)]} ${nearby[Math.floor(Math.random() * 4)]}, ${address.split(',').slice(0, 2)}`;
+  const title = `${descrip[Math.floor(Math.random() * 4)]}, ${beds[Math.floor(Math.random() * 4)]} & ${nearby[Math.floor(Math.random() * 4)]}`;
 
   return {
     address,
