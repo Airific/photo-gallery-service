@@ -18,6 +18,7 @@ class App extends React.Component {
       count: 0,
       isSaved: false,
       isClick: false,
+      isModalClicked: false,
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
