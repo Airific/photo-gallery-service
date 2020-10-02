@@ -11,7 +11,7 @@ const Header = (props) => {
 
   return (
     <Container>
-      <h1>Tahoe cabin walk to the lake</h1>
+      <h1>{headInfo[0].title}</h1>
       <GridContainer>
         <Col className="btnContainer" size={12}>
           <img className="star" src="../img/star-icon.png" alt="red-star" />
