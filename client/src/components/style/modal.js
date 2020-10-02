@@ -4,9 +4,47 @@ export const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  display: ${(props) => (props.showModal ? 'block' : 'none')};
+  // display: ${(props) => (props.showModal ? 'block' : 'none')};
   width: 100%;
   z-index: 9;
+
+  opacity: 0;
+  animation-duration: 0.5s;
+  transform: translateY(570px);
+
+  &.slideIn {
+    animation-name: slideIn;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.slideOut {
+    animation-name: slideOut;
+    opacity: 0;
+    transform: translateY(570px);
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
 
 `;
 
@@ -51,12 +89,16 @@ export const Header = styled.div`
 
 export const ListItem = styled.div`
   padding: 20px;
+  margin-left: 13px;
   cursor: pointer;
   :hover {
     background-color: rgb(247, 247, 247);
   }
   img {
     float: left;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
   }
 
   div {

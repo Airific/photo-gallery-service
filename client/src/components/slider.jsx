@@ -10,19 +10,31 @@ const Slider = (props) => {
   const {
     imgList,
     handleSavedClick,
-    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved,
+    showSlider, handleShowAllClick, count, decrementCount, incrementCount, isSaved, isClick,
   } = props;
   const imgLink = imgList[count].url;
   const imgDes = imgList[count].description;
 
+  let fade = '';
+  if (showSlider && isClick) {
+    fade = 'fadeIn';
+  } else if (!showSlider && isClick) {
+    fade = 'fadeOut';
+  }
+
   return (
-    <Container showSlider={showSlider}>
+    <Container className={fade} showSlider={showSlider}>
       <GridContainer>
         <div>
           <div className="header">
             <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
             <p>{`${count + 1} / ${imgList.length}`}</p>
-            <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
+            <div className="heart">
+              <img src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
+            </div>
+            <div className="share">
+              <img className="shareIcon" src="../img/up-arrow.png" alt="share" />
+            </div>
           </div>
           <Col className="main">
             <button onClick={() => { decrementCount(); }} className="left" type="button">

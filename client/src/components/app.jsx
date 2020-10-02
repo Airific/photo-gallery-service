@@ -17,6 +17,8 @@ class App extends React.Component {
       showSlider: false,
       count: 0,
       isSaved: false,
+      isClick: false,
+      isModalClicked: false,
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
@@ -25,6 +27,7 @@ class App extends React.Component {
     this.decrementCount = this.decrementCount.bind(this);
     this.handleImgClick = this.handleImgClick.bind(this);
     this.handleSaveToClick = this.handleSaveToClick.bind(this);
+    this.handleOverlayClick = this.handleOverlayClick.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +53,7 @@ class App extends React.Component {
     } else {
       this.setState((state) => ({
         showModal: !state.showModal,
+        isModalClicked: true,
       }));
     }
   }
@@ -65,6 +69,7 @@ class App extends React.Component {
     this.setState((state) => ({
       showSlider: !state.showSlider,
       count: 0,
+      isClick: true,
     }));
   }
 
@@ -80,7 +85,15 @@ class App extends React.Component {
     this.setState((state) => ({
       showSlider: !state.showSlider,
       count: indexOfImg,
+      isClick: true,
+      isModalClicked: false,
     }));
+  }
+
+  handleOverlayClick() {
+    this.setState({
+      showModal: false,
+    });
   }
 
   incrementCount() {
@@ -107,7 +120,7 @@ class App extends React.Component {
 
   render() {
     const {
-      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved,
+      isLoad, imgList, showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked,
     } = this.state;
 
     if (isLoad) {
@@ -116,11 +129,13 @@ class App extends React.Component {
           <Gallery
             imgList={imgList}
             isSaved={isSaved}
+            showSlider={showSlider}
             handleShowAllClick={this.handleShowAllClick}
             handleSavedClick={this.handleSavedClick}
             handleImgClick={this.handleImgClick}
           />
           <Slider
+            isClick={isClick}
             showSlider={showSlider}
             imgList={imgList}
             isSaved={isSaved}
@@ -133,8 +148,11 @@ class App extends React.Component {
           />
           <Modal
             showModal={showModal}
+            imgList={imgList}
+            isModalClicked={isModalClicked}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
+            handleOverlayClick={this.handleOverlayClick}
           />
         </Theme>
       );

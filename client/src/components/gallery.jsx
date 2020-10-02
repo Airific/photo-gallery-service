@@ -8,16 +8,20 @@ import {
 
 const Gallery = (props) => {
   const {
-    handleImgClick, handleSavedClick, handleShowAllClick, imgList, isSaved,
+    handleImgClick, handleSavedClick, handleShowAllClick, imgList, isSaved, showSlider,
   } = props;
 
   return (
-    <Container>
+    <Container showSlider={showSlider}>
       <GridContainer>
         <Col className="btnContainer" size={12}>
           <button className="saveBtn" type="button" onClick={() => { handleSavedClick(); }}>
-            <p className="save">{isSaved ? 'Saved' : 'Save'}</p>
+            <p>{isSaved ? 'Saved' : 'Save'}</p>
             <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" />
+          </button>
+          <button className="shareBtn" type="button">
+            <p>Share</p>
+            <img className="upload" src="../img/up-arrow.png" alt="upload" />
           </button>
         </Col>
       </GridContainer>
@@ -37,10 +41,10 @@ const Gallery = (props) => {
               <Col className="mr-5" size={6}><img src={imgList[3].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
               <Col size={6}><img src={imgList[4].url} alt="sofa" onClick={(e) => { handleImgClick(e, imgList); }} /></Col>
             </GridContainer>
+            <button onClick={() => { handleShowAllClick(); }} className="showAll" type="button">Show all photos</button>
           </Col>
         </Col>
       </GridContainer>
-      <button onClick={() => { handleShowAllClick(); }} className="showAll" type="button">Show All</button>
     </Container>
   );
 };

@@ -8,6 +8,10 @@ describe('Modal unit test', () => {
   const props = {
     imgList: [
       { url: 'abc', description: 'testing' },
+      { url: 'abc', description: 'testing' },
+      { url: 'abc', description: 'testing' },
+      { url: 'abc', description: 'testing' },
+      { url: 'abc', description: 'testing' },
     ],
   };
 
