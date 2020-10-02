@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  max-width: 1120px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+
   .showAll {
     display: ${(props) => (props.showSlider ? 'none' : 'block')};
     margin: 50px;
@@ -19,11 +24,10 @@ export const Container = styled.div`
 `;
 
 export const GridContainer = styled.div`
-  max-width: 1120px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   overflow: hidden;
-
 
   &.main {
     height: 300px;
@@ -45,33 +49,6 @@ export const GridContainer = styled.div`
     margin-right: 5px;
   }
 
-  .btnContainer {
-    padding-bottom: 10px;
-  }
-
-  .saveBtn,
-  .shareBtn {
-    border: none;
-    background-color: #fff;
-    display: inline;
-    float: right;
-    margin: 5px;
-    padding: 5px 6px;
-    cursor: pointer;
-
-    p {
-      float: right;
-      margin: 0;
-      text-decoration: underline;
-    }
-  }
-
-  .saveBtn:hover,
-  .shareBtn:hover {
-    background-color: #f2f2f2;
-    border-radius: 5px;
-  }
-
   `;
 
 export const Col = styled.div`
@@ -79,20 +56,6 @@ export const Col = styled.div`
   position: relative;
   flex-basis: ${(props) => (props.size === 6 ? '50%' : '100%')};
   overflow: hidden;
-
-  .heart {
-    display: inline;
-    padding: 0 4px 3px 3px;
-    width: 15px;
-    height: 15px;
-  }
-
-  .upload {
-    width: 18px;
-    height: 18px;
-    display: inline;
-    padding: 0 4px 3px 3px;
-  }
 
   img {
     height: 100%;
