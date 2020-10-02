@@ -55,7 +55,7 @@ for (let i = 0; i < 100; i++) {
   imgData.push({ id: i + 1, imgURLs: houses[Math.floor(Math.random() * 3)] });
 }
 
-db.dropCollection('images', (err) => {
+db.db.dropCollection('images', (err) => {
   if (err) {
     console.log('error dropping images collection', err);
   } else {
@@ -74,7 +74,7 @@ db.Image.insertMany(imgData)
 // header
 
 function randomData() {
-  const address = faker.fake('{{address.city}},{{address.state}},{{address.country}}');
+  const address = faker.fake('{{address.city}}, {{address.state}}, {{address.country}}');
   const descrip = ['Wine Country View', 'Ocean View', 'Entire Apartment', 'Entire House'];
   const beds = ['4 Beds', '5 Beds', '3 Beds', '6 Beds'];
   const nearby = ['Close to town', '5mins walk from Central', 'Close to grocery stores', 'Near Attractions'];
@@ -95,14 +95,14 @@ for (let i = 0; i < 100; i++) {
       id: i + 1,
       title: dataSet.title,
       address: dataSet.address,
-      isSaved: false,
-      reviews: faker.random.number({ min: 1, max: 5 }),
+      reviews: faker.random.number({ min: 1, max: 5, precision: 0.01 }),
+      totalReviews: faker.random.number({ min: 15, max: 300 }),
       superhost: faker.random.boolean(),
     },
   );
 }
 
-db.dropCollection('headers', (err) => {
+db.db.dropCollection('headers', (err) => {
   if (err) {
     console.log('error dropping headers collection', err);
   } else {
