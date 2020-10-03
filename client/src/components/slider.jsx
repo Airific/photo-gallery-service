@@ -30,19 +30,19 @@ const Slider = (props) => {
             <button className="close" onClick={() => { handleShowAllClick(); }} type="button"> X Close </button>
             <p>{`${count + 1} / ${imgList.length}`}</p>
             <div className="heart">
-              <img src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
+              <img src={isSaved ? 'https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/like.png' : 'https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/heart.png'} alt="heart" onClick={() => { handleSavedClick(); }} />
             </div>
             <div className="share">
-              <img className="shareIcon" src="../img/up-arrow.png" alt="share" />
+              <img className="shareIcon" src="https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/up-arrow.png" alt="share" />
             </div>
           </div>
           <Col className="main">
             <button onClick={() => { decrementCount(); }} className="left" type="button">
-              <img src="../img/left-arrow.png" alt="prev" className="leftArrow" />
+              <img src="https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/left-arrow.png" alt="prev" className="leftArrow" />
             </button>
             <img src={imgLink} alt="interior" />
             <button onClick={() => { incrementCount(); }} className="right" type="button">
-              <img src="../img/next.png" alt="next" className="rightArrow" />
+              <img src="https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/next.png" alt="next" className="rightArrow" />
             </button>
             <div className="description">{imgDes}</div>
           </Col>

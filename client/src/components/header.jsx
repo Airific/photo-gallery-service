@@ -14,18 +14,18 @@ const Header = (props) => {
       <h1>{headInfo[0].title}</h1>
       <GridContainer>
         <Col className="btnContainer" size={12}>
-          <img className="star" src="../img/star-icon.png" alt="red-star" />
+          <img className="star" src="https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/star-icon.png" alt="red-star" />
           <span className="reviewNum">{headInfo[0].reviews}</span>
           <span className="reviews">{` (${headInfo[0].totalReviews}) ${host} · `}</span>
           <span className="address">{headInfo[0].address}</span>
           <div>
             <button className="saveBtn" type="button" onClick={() => { handleSavedClick(); }}>
               <p>{isSaved ? 'Saved' : 'Save'}</p>
-              <img className="heart" src={isSaved ? '../img/like.png' : '../img/heart.png'} alt="heart" />
+              <img className="heart" src={isSaved ? 'https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/like.png' : 'https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/heart.png'} alt="heart" />
             </button>
             <button className="shareBtn" type="button">
               <p>Share</p>
-              <img className="upload" src="../img/up-arrow.png" alt="upload" />
+              <img className="upload" src="https://airific-gallery-photos.s3-us-west-1.amazonaws.com/icons/up-arrow.png" alt="upload" />
             </button>
           </div>
         </Col>
