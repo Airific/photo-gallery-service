@@ -8,7 +8,13 @@ export const Container = styled.div`
   &.fadeIn {
     animation-name: fadeIn;
     opacity: 1;
-    transform: translateY(-590px);
+    transform: translateY(-400px);
+    @media screen and (min-width: 768px) {
+      transform: translateY(-485px);
+    }
+    @media screen and (min-width: 992px) {
+      transform: translateY(-590px);
+    }
   }
 
   &.fadeOut {
