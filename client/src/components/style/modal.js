@@ -81,9 +81,14 @@ export const Header = styled.div`
   margin-bottom: 10px;
   span {
     font-family: Roboto;
-    font-weight: 370;
+    font-weight: 390;
     float: left;
+    border-radius: 50%;
     cursor: pointer;
+    padding: 4px 8px;
+    :hover {
+      background-color: rgb(240, 240, 240);
+    }
   }
 `;
 

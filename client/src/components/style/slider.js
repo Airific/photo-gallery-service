@@ -67,6 +67,9 @@ export const GridContainer = styled.div`
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
+    &:hover {
+      background-color: rgba(34, 34, 34, 0.16);
+    }
   }
 
   p {
