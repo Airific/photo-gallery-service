@@ -56,7 +56,7 @@ export const Overlay = styled.div`
 `;
 
 export const GridContainer = styled.div`
-  max-width: 568px;
+  max-width: 60vw;
   width: 100%;
   margin: auto;
   display: grid;
@@ -69,12 +69,18 @@ export const GridContainer = styled.div`
   right: 0;
   text-align: center;
   z-index: 1;
+  @media screen and (min-width: 768px) {
+    max-width: 480px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 568px;
+  }
 
 `;
 
 export const Header = styled.div`
   border-bottom: 1px solid rgb(235, 235, 235);
-  padding: 24px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -90,12 +96,29 @@ export const Header = styled.div`
       background-color: rgb(240, 240, 240);
     }
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: 24px;
+  }
 `;
 
 export const ListItem = styled.div`
-  padding: 20px;
+  padding: 5px 15px;
   margin-left: 13px;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    padding: 10px 15px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: 20px;
+  }
+
   :hover {
     background-color: rgb(247, 247, 247);
   }
@@ -142,8 +165,15 @@ export const ListItem = styled.div`
 
 export const Footer = styled.div`
   border-top: 1px solid rgb(235, 235, 235);
-  padding: 27px;
+  padding: 15px 20px;
   line-height: 20px;
   text-decoration: underline;
   margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding: 18px 22px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 25px;
+  }
 `;
