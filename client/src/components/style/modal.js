@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   // display: ${(props) => (props.showModal ? 'block' : 'none')};
   width: 100%;
-  z-index: 9;
+  z-index: 999;
 
   opacity: 0;
   animation-duration: 0.5s;
-  transform: translateY(570px);
+  transform: translateY(1000px);
 
   &.slideIn {
     animation-name: slideIn;
@@ -21,13 +21,13 @@ export const Container = styled.div`
   &.slideOut {
     animation-name: slideOut;
     opacity: 0;
-    transform: translateY(570px);
+    transform: translateY(1000px);
   }
 
   @keyframes slideIn {
     0% {
       opacity: 0;
-      transform: translateY(100%);
+      transform: translateY(1000px);
     }
     100% {
       opacity: 1;
@@ -42,7 +42,7 @@ export const Container = styled.div`
     }
     100% {
       opacity: 0;
-      transform: translateY(100%);
+      transform: translateY(1000px);
     }
   }
 
@@ -51,6 +51,7 @@ export const Container = styled.div`
 export const Overlay = styled.div`
   background-color: #333;
   height: 100vh;
+  position: fixed;
   opacity: .6;
   width: 100%;
 `;
@@ -58,7 +59,7 @@ export const Overlay = styled.div`
 export const GridContainer = styled.div`
   max-width: 60vw;
   width: 100%;
-  margin: auto;
+  margin: 15% auto;
   display: grid;
   background-color: #fff;
   border: 1px solid #aaa;
@@ -68,7 +69,7 @@ export const GridContainer = styled.div`
   left: 0;
   right: 0;
   text-align: center;
-  z-index: 1;
+  z-index: 999;
   @media screen and (min-width: 768px) {
     max-width: 480px;
   }

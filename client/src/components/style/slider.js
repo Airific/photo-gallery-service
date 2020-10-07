@@ -3,24 +3,27 @@ import styled from 'styled-components';
 export const Container = styled.div`
   opacity: 0;
   animation-duration: 0.5s;
-  transform: translateY(360px);
+  transform: translateY(50px);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 
   &.fadeIn {
     animation-name: fadeIn;
     opacity: 1;
-    transform: translateY(-400px);
+    transform: translateY(0);
     @media screen and (min-width: 768px) {
-      transform: translateY(-485px);
+      transform: translateY(-570px);
     }
     @media screen and (min-width: 992px) {
-      transform: translateY(-590px);
+      transform: translateY(-698px);
     }
   }
 
   &.fadeOut {
     animation-name: fadeOut;
     opacity: 0;
-    transform: translateY(360px);
+    transform: translateY(50px);
   }
 
   @keyframes fadeIn {
@@ -30,18 +33,18 @@ export const Container = styled.div`
     }
     100% {
       opacity: 1;
-      transform: translateY(-590px);
+      transform: translateY(-698px);
     }
   }
 
   @keyframes fadeOut {
     0% {
       opacity: 1;
-      transform: translateY(-590px);
+      transform: translateY(-698px);
     }
     100% {
       opacity: 0;
-      transform: translateY(360px);
+      transform: translateY(50px);
     }
   }
 `;

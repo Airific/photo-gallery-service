@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   h1 {
     color: #222222;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 500;
     line-height: 23px;
   }

@@ -34,8 +34,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const pageId = window.location.pathname.split('/')[1];
-    axios.get(`/listings/gallery/${pageId}`)
-      .then((results) => axios.get(`/listings/header/${pageId}`)
+    axios.get(`http://localhost:3001/listings/gallery/${pageId}`)
+      .then((results) => axios.get(`http://localhost:3001/listings/header/${pageId}`)
         .then((results2) => {
           this.setState({
             isLoad: true,
