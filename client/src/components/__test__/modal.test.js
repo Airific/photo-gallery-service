@@ -13,10 +13,15 @@ describe('Modal unit test', () => {
       { url: 'abc', description: 'testing' },
       { url: 'abc', description: 'testing' },
     ],
+    savedList: [
+      { name: 'check'},
+      { name: 'check'},
+      { name: 'check'},
+    ]
   };
 
   it('renders without crashing', () => {
-    const wrapper = render(<Modal imgList={props.imgList} />);
+    const wrapper = render(<Modal imgList={props.imgList} savedList={props.savedList}/>);
     expect(wrapper).toBeDefined();
   });
 });
