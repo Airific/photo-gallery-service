@@ -22,6 +22,16 @@ class App extends React.Component {
       isSaved: false,
       isClick: false,
       isModalClicked: false,
+      createList: false,
+      savedList: [
+        {
+          name: 'Vacation Place',
+        },
+        {
+          name: 'Tahoe',
+        }
+      ],
+
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
@@ -31,6 +41,7 @@ class App extends React.Component {
     this.handleImgClick = this.handleImgClick.bind(this);
     this.handleSaveToClick = this.handleSaveToClick.bind(this);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
+    this.handleCreateListClick = this.handleCreateListClick.bind(this);
   }
 
   componentDidMount() {
@@ -54,11 +65,13 @@ class App extends React.Component {
     if (isSaved) {
       this.setState((state) => ({
         isSaved: !state.isSaved,
+        createList: false,
       }));
     } else {
       this.setState((state) => ({
         showModal: !state.showModal,
         isModalClicked: true,
+        createList: false,
       }));
     }
   }
@@ -98,7 +111,20 @@ class App extends React.Component {
   handleOverlayClick() {
     this.setState({
       showModal: false,
+      createList: false,
     });
+  }
+
+  handleCreateListClick() {
+    this.setState({
+      createList: true,
+    })
+  }
+
+  handleCreateClick(e) {
+    this.setState({
+      savedListName: e.target.value,
+    })
   }
 
   incrementCount() {
@@ -126,7 +152,7 @@ class App extends React.Component {
   render() {
     const {
       isLoad, imgList,
-      showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked, headInfo,
+      showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked, headInfo, createList, savedList,
     } = this.state;
 
     if (isLoad) {
@@ -156,12 +182,15 @@ class App extends React.Component {
             decrementCount={this.decrementCount}
           />
           <Modal
+            savedList={savedList}
+            createList={createList}
             showModal={showModal}
             imgList={imgList}
             isModalClicked={isModalClicked}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
             handleOverlayClick={this.handleOverlayClick}
+            handleCreateListClick={this.handleCreateListClick}
           />
         </Theme>
       );

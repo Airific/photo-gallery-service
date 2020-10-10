@@ -107,7 +107,7 @@ export const Header = styled.div`
   }
 `;
 
-export const ListItem = styled.div`
+export const ListItemStyle = styled.div`
   padding: 5px 15px;
   margin-left: 13px;
   cursor: pointer;
