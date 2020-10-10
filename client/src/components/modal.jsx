@@ -4,7 +4,7 @@
 import React from 'react';
 import ListItem from './listItem';
 import {
-  Container, GridContainer, Header, Footer, Overlay,
+  Container, GridContainer, Header, Footer, Overlay, Form,
 } from './style/modal';
 
 const Modal = (props) => {
@@ -27,12 +27,12 @@ const Modal = (props) => {
             <span className="cancel" onClick={() => { handleSavedClick(); }}>X</span>
             Name this list
           </Header>
-          <form onSubmit={(e) => { handleCreateClick(e); }}>
-            <input type='text' name='inputName' />
+          <Form onSubmit={(e) => { handleCreateClick(e); }}>
+            <input type='text' name='inputName' placeholder='Name'/>
             <Footer>
               <button type='submit'>Create</button>
             </Footer>
-          </form>
+          </Form>
         </GridContainer>
         <Overlay onClick={() => { handleOverlayClick(); }} />
       </Container>

@@ -164,6 +164,20 @@ export const ListItemStyle = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  input {
+    width: 94%;
+    border: 1px solid #555;
+    border-radius: 10px;
+    height: 50px;
+    margin: 25px auto;
+    outline: none;
+    &::placeholder {
+      margin-left: 50px;
+    }
+  }
+`;
+
 export const Footer = styled.div`
   border-top: 1px solid rgb(235, 235, 235);
   padding: 15px 20px;
@@ -179,7 +193,6 @@ export const Footer = styled.div`
     background-color: #000;
     color: #fff;
     font-size: 16px;
-
   }
 
   @media screen and (min-width: 768px) {
