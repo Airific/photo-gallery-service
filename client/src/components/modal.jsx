@@ -9,7 +9,7 @@ import {
 
 const Modal = (props) => {
   const {
-    showModal, handleSavedClick, handleSaveToClick, imgList, isModalClicked, handleOverlayClick, createList, handleCreateListClick, savedList,
+    showModal, handleSavedClick, handleSaveToClick, imgList, isModalClicked, handleOverlayClick, createList, handleCreateListClick, savedList, handleCreateClick,
   } = props;
 
   let fade = '';
@@ -27,7 +27,12 @@ const Modal = (props) => {
             <span className="cancel" onClick={() => { handleSavedClick(); }}>X</span>
             Name this list
           </Header>
-          <Footer>Create</Footer>
+          <form onSubmit={(e) => { handleCreateClick(e); }}>
+            <input type='text' name='inputName' />
+            <Footer>
+              <button type='submit'>Create</button>
+            </Footer>
+          </form>
         </GridContainer>
         <Overlay onClick={() => { handleOverlayClick(); }} />
       </Container>
@@ -43,33 +48,8 @@ const Modal = (props) => {
             Save to a list
           </Header>
           {savedList.map((item) => (
-            <ListItem handleSaveToClick={handleSaveToClick} imgList={imgList} savedName={item.name}></ListItem>
+            <ListItem handleSaveToClick={handleSaveToClick} imgList={imgList} savedName={item.name} key={Math.random()}></ListItem>
           ))}
-
-          {/* <ListItem onClick={() => { handleSaveToClick(); }}>
-            <img src={imgList[1].url} alt="pic" />
-            <div>
-              <p className="top">Any time</p>
-              <p className="mid">Vacation Places</p>
-              <p className="bottom">2 Stays</p>
-            </div>
-          </ListItem>
-          <ListItem onClick={() => { handleSaveToClick(); }}>
-            <img src={imgList[1].url} alt="pic" />
-            <div>
-              <p className="top">Any time</p>
-              <p className="mid">Dream Homes</p>
-              <p className="bottom">Nothing saved yet</p>
-            </div>
-          </ListItem>
-          <ListItem onClick={() => { handleSaveToClick(); }}>
-            <img src={imgList[1].url} alt="pic" />
-            <div>
-              <p className="top">Any time</p>
-              <p className="mid">Tahoe</p>
-              <p className="bottom">Nothing saved yet</p>
-            </div>
-          </ListItem> */}
           <Footer onClick={() => { handleCreateListClick(); }}>Create a list</Footer>
         </GridContainer>
         <Overlay onClick={() => { handleOverlayClick(); }} />

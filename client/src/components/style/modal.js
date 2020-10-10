@@ -171,6 +171,17 @@ export const Footer = styled.div`
   text-decoration: underline;
   margin-top: 10px;
 
+  button {
+    width: 100%;
+    padding: 15px;
+    border: 1px;
+    border-radius: 15px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+
+  }
+
   @media screen and (min-width: 768px) {
     padding: 18px 22px;
   }
@@ -178,3 +189,5 @@ export const Footer = styled.div`
     padding: 25px;
   }
 `;
+
+

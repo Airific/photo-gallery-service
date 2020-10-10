@@ -25,9 +25,6 @@ class App extends React.Component {
       createList: false,
       savedList: [
         {
-          name: 'Vacation Place',
-        },
-        {
           name: 'Tahoe',
         }
       ],
@@ -42,6 +39,7 @@ class App extends React.Component {
     this.handleSaveToClick = this.handleSaveToClick.bind(this);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
     this.handleCreateListClick = this.handleCreateListClick.bind(this);
+    this.handleCreateClick = this.handleCreateClick.bind(this);
   }
 
   componentDidMount() {
@@ -122,9 +120,13 @@ class App extends React.Component {
   }
 
   handleCreateClick(e) {
-    this.setState({
-      savedListName: e.target.value,
-    })
+    e.preventDefault();
+    let name = e.target.children[0].value
+    this.setState((state) => ({
+      savedList: state.savedList.concat({name: name}),
+      createList: false,
+      // showModal: false,
+    }));
   }
 
   incrementCount() {
@@ -191,6 +193,7 @@ class App extends React.Component {
             handleSaveToClick={this.handleSaveToClick}
             handleOverlayClick={this.handleOverlayClick}
             handleCreateListClick={this.handleCreateListClick}
+            handleCreateClick={this.handleCreateClick}
           />
         </Theme>
       );
