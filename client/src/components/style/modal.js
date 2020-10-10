@@ -108,8 +108,10 @@ export const Header = styled.div`
 `;
 
 export const ListItemStyle = styled.div`
+  border-radius: 15px;
   padding: 5px 15px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -193,6 +195,11 @@ export const Footer = styled.div`
     background-color: #000;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
+  }
+
+  span {
+    cursor: pointer;
   }
 
   @media screen and (min-width: 768px) {

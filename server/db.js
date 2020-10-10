@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // eslint-disable-next-line prefer-destructuring
 const Schema = mongoose.Schema;
 //172.17.0.3:27017
-mongoose.connect('mongodb://localhost/gallery', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://172.17.0.3:27017/gallery', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 const gallerySchema = new Schema({

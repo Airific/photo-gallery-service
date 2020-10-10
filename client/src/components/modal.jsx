@@ -50,7 +50,7 @@ const Modal = (props) => {
           {savedList.map((item) => (
             <ListItem handleSaveToClick={handleSaveToClick} imgList={imgList} savedName={item.name} key={Math.random()}></ListItem>
           ))}
-          <Footer onClick={() => { handleCreateListClick(); }}>Create a list</Footer>
+          <Footer onClick={() => { handleCreateListClick(); }}><span>Create a list</span></Footer>
         </GridContainer>
         <Overlay onClick={() => { handleOverlayClick(); }} />
       </Container>
