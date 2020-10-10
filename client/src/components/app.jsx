@@ -6,6 +6,7 @@ import Modal from './modal';
 import Theme from './style/theme';
 import Slider from './slider';
 import Header from './header';
+import Loading from './loader';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +34,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const pageId = window.location.pathname.split('/')[1];
-    axios.get(`/listings/gallery/${pageId}`)
-      .then((results) => axios.get(`/listings/header/${pageId}`)
+    const pageId = window.location.pathname;
+    axios.get(`/listings/gallery${pageId}`)
+      .then((results) => axios.get(`/listings/header${pageId}`)
         .then((results2) => {
           this.setState({
             isLoad: true,
@@ -166,7 +167,7 @@ class App extends React.Component {
       );
     }
     return (
-      <div>Loading</div>
+      <Loading />
     );
   }
 }
