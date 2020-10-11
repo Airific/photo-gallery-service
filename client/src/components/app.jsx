@@ -6,6 +6,7 @@ import Modal from './modal';
 import Theme from './style/theme';
 import Slider from './slider';
 import Header from './header';
+import Loading from './loader';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,13 @@ class App extends React.Component {
       isSaved: false,
       isClick: false,
       isModalClicked: false,
+      createList: false,
+      savedList: [
+        {
+          name: 'Tahoe',
+        }
+      ],
+
     };
 
     this.handleSavedClick = this.handleSavedClick.bind(this);
@@ -30,12 +38,14 @@ class App extends React.Component {
     this.handleImgClick = this.handleImgClick.bind(this);
     this.handleSaveToClick = this.handleSaveToClick.bind(this);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
+    this.handleCreateListClick = this.handleCreateListClick.bind(this);
+    this.handleCreateClick = this.handleCreateClick.bind(this);
   }
 
   componentDidMount() {
-    const pageId = window.location.pathname.split('/')[1];
-    axios.get(`/listings/gallery/${pageId}`)
-      .then((results) => axios.get(`/listings/header/${pageId}`)
+    const pageId = window.location.pathname;
+    axios.get(`/listings/gallery${pageId}`)
+      .then((results) => axios.get(`/listings/header${pageId}`)
         .then((results2) => {
           this.setState({
             isLoad: true,
@@ -53,11 +63,13 @@ class App extends React.Component {
     if (isSaved) {
       this.setState((state) => ({
         isSaved: !state.isSaved,
+        createList: false,
       }));
     } else {
       this.setState((state) => ({
         showModal: !state.showModal,
         isModalClicked: true,
+        createList: false,
       }));
     }
   }
@@ -97,7 +109,24 @@ class App extends React.Component {
   handleOverlayClick() {
     this.setState({
       showModal: false,
+      createList: false,
     });
+  }
+
+  handleCreateListClick() {
+    this.setState({
+      createList: true,
+    })
+  }
+
+  handleCreateClick(e) {
+    e.preventDefault();
+    let name = e.target.children[0].value
+    this.setState((state) => ({
+      savedList: state.savedList.concat({name: name}),
+      createList: false,
+      // showModal: false,
+    }));
   }
 
   incrementCount() {
@@ -125,7 +154,7 @@ class App extends React.Component {
   render() {
     const {
       isLoad, imgList,
-      showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked, headInfo,
+      showModal, showSlider, resetSlider, count, isSaved, isClick, isModalClicked, headInfo, createList, savedList,
     } = this.state;
 
     if (isLoad) {
@@ -155,18 +184,22 @@ class App extends React.Component {
             decrementCount={this.decrementCount}
           />
           <Modal
+            savedList={savedList}
+            createList={createList}
             showModal={showModal}
             imgList={imgList}
             isModalClicked={isModalClicked}
             handleSavedClick={this.handleSavedClick}
             handleSaveToClick={this.handleSaveToClick}
             handleOverlayClick={this.handleOverlayClick}
+            handleCreateListClick={this.handleCreateListClick}
+            handleCreateClick={this.handleCreateClick}
           />
         </Theme>
       );
     }
     return (
-      <div>Loading</div>
+      <Loading />
     );
   }
 }

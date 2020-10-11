@@ -107,9 +107,11 @@ export const Header = styled.div`
   }
 `;
 
-export const ListItem = styled.div`
+export const ListItemStyle = styled.div`
+  border-radius: 15px;
   padding: 5px 15px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -164,12 +166,41 @@ export const ListItem = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  input {
+    width: 94%;
+    border: 1px solid #555;
+    border-radius: 10px;
+    height: 50px;
+    margin: 25px auto;
+    outline: none;
+    &::placeholder {
+      margin-left: 50px;
+    }
+  }
+`;
+
 export const Footer = styled.div`
   border-top: 1px solid rgb(235, 235, 235);
   padding: 15px 20px;
   line-height: 20px;
   text-decoration: underline;
   margin-top: 10px;
+
+  button {
+    width: 100%;
+    padding: 15px;
+    border: 1px;
+    border-radius: 15px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  span {
+    cursor: pointer;
+  }
 
   @media screen and (min-width: 768px) {
     padding: 18px 22px;
@@ -178,3 +209,5 @@ export const Footer = styled.div`
     padding: 25px;
   }
 `;
+
+
