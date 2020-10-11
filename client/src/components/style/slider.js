@@ -11,12 +11,12 @@ export const Container = styled.div`
   &.fadeIn {
     animation-name: fadeIn;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-404px);
     @media screen and (min-width: 768px) {
-      transform: translateY(-570px);
+      transform: translateY(-504px);
     }
     @media screen and (min-width: 992px) {
-      transform: translateY(-698px);
+      transform: translateY(-607px);
     }
   }
 
@@ -33,14 +33,14 @@ export const Container = styled.div`
     }
     100% {
       opacity: 1;
-      transform: translateY(-698px);
+      transform: translateY(-607px);
     }
   }
 
   @keyframes fadeOut {
     0% {
       opacity: 1;
-      transform: translateY(-698px);
+      transform: translateY(-607px);
     }
     100% {
       opacity: 0;
