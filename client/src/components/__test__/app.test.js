@@ -135,4 +135,20 @@ describe('App component unit test', () => {
     minButton.find('.top').at(0).simulate('click');
     expect(wrapper.state().isSaved).toBe(true);
   });
+
+  it('check createList state change with createList click', () => {
+    const wrapper = mount(<App />);
+    wrapper.setState({
+      isLoad: true,
+      count: 1,
+      imgList: props.imgList,
+      isSaved: props.isSaved,
+      headInfo: props.headInfo,
+      createList: props.createList,
+    });
+    const minButton = wrapper.find('span');
+    minButton.find('.listName').simulate('click');
+    expect(wrapper.state().createList).toBe(true);
+  });
 });
+
